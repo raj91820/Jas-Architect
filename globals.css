@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Outfit", sans-serif;
+  
+  --color-luxury-gold: #c5a880;
+  --color-luxury-gold-dark: #a38965;
+  --color-luxury-gold-light: #e4d7c5;
+  --color-luxury-charcoal: #0a0a0a;
+  --color-luxury-black: #050505;
+  --color-luxury-gray: #141414;
+  --color-luxury-light-gray: #222222;
+  --color-luxury-offwhite: #f5f5f7;
+  
+  --animate-scroll-down: scroll-down 2s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 1s ease-out forwards;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f5f5f7;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Typography Helper */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-luxury-light-gray);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-luxury-gold);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--color-luxury-gold);
+  color: var(--color-luxury-black);
+}
+
+/* Hide scrollbar utility for smooth scrolling panels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
